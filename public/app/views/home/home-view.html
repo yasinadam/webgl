@@ -1,0 +1,35 @@
+<div navi></div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+            <ul class="nav nav-sidebar">
+                <li class="active" ng-click="test()"><a href="#">Image Tools</a></li>
+            </ul>
+        </div>
+
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <h1 class="page-header">Image Tools</h1>
+
+            <h2 ng-click="test()" class="sub-header">Upload</h2>
+            Drop File:
+            <div ngf-drop ngf-select ng-model="img.files" class="drop-box"
+                ngf-drag-over-class="'dragover'" ngf-multiple="false" ngf-allow-dir="true"
+                accept="image/*,application/pdf"
+                ngf-pattern="'image/*,application/pdf'">Drop pdfs or images here or click to upload</div>
+            <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
+            Files:
+            <ul>
+                <li ng-repeat="f in files" style="font:smaller">{{f.name}} {{f.$error}} {{f.$errorParam}}</li>
+            </ul>
+            Upload Log:
+            <pre>{{log}}</pre>
+            <div class="img-wrap">
+                <img id="image" ng-click="edit()" width="100%" ngf-thumbnail="img.files || '/thumb.jpg'">
+            </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
