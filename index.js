@@ -3,13 +3,13 @@ var express         = require('express');
 var app             = express();
 var bodyParser      = require('body-parser');
 // DB
-var mongoose        = require('mongoose');
+//var mongoose        = require('mongoose');
 // DB Collection
-var User = require(__dirname + '/server/models/user');
+//var User = require(__dirname + '/server/models/user');
 // DB config
-var configDB = require('./config/database.js');
+//var configDB = require('./config/database.js');
 // Connect DB
-mongoose.connect(configDB.url);
+//mongoose.connect(configDB.url);
 
 // Set Port
 app.set('port', (process.env.PORT || 5002));
@@ -27,7 +27,7 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
 // routes
-require(__dirname + '/server/routes')(app, User);
+require(__dirname + '/server/routes')(app);
 
 app.listen(app.get('port'), function() {
     console.log('Node app is running on port', app.get('port'));

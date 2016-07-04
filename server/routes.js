@@ -1,9 +1,9 @@
 
 
-module.exports = function(app, User) {
+module.exports = function(app) {
 
 	app.post('/api/add-data', function(req, res) {
-		console.log('in');
+		//console.log('in');
 		/*var user = new User();
         user.username = req.body.data;
 
