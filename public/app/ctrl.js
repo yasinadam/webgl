@@ -25,12 +25,14 @@ app.controller('HomeCtrl', function($scope, $http, Upload) {
             return;
         }
 
-
         var image = document.getElementById('image');
+        canvas.width = image.width;
+        canvas.height = image.height;
         var texture = canvas.texture(image);
         canvas.setAttribute("id", "canvas-1");
+        canvas.imageSmoothingEnabled = false;
 
-        canvas.draw(texture).ink(0.25).update();
+        canvas.draw(texture).ink(0.01).update();
         // apply the ink filter
         //canvas.draw(texture).perspective([nub1y,nub1x,nub2y,nub2x,nub3y,nub3x,nub4y,nub4x], [nub1y,nub1x,nub2y,nub2x,nub3y,nub3x,nub4y,nub4x]);
 
